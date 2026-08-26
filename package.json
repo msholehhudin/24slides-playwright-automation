@@ -3,7 +3,10 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "test": "cucumber-js",
+    "test:headed": "HEADLESS=false cucumber-js"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
@@ -12,6 +15,7 @@
     "@cucumber/cucumber": "^12.9.0",
     "@playwright/test": "^1.62.1",
     "@types/node": "^26.3.0",
-    "ts-node": "^10.9.2"
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.3"
   }
 }
