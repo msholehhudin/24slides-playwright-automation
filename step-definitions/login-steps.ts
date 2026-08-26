@@ -13,7 +13,10 @@ Given("I am on the OrangeHRM login page", async function (this: CustomWorld) {
 When(
   "I log in with valid administrator credentials",
   async function (this: CustomWorld) {
-    await this.loginPage.login("Admin", "admin123");
+    await this.loginPage.login(
+      process.env.ORANGEHRM_USERNAME!,
+      process.env.ORANGEHRM_PASSWORD!,
+    );
   },
 );
 
