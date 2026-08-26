@@ -1,4 +1,4 @@
-import { Page } from "@playwright/test";
+import { expect, Page } from "@playwright/test";
 
 export class LoginPage {
   constructor(private readonly page: Page) {}
@@ -13,5 +13,9 @@ export class LoginPage {
     await this.page.getByPlaceholder("Password").fill(password);
 
     await this.page.getByRole("button", { name: "Login" }).click();
+  }
+
+  async verifyLoginErrorMessage() {
+    await expect(this.page.getByText("Invalid credentials")).toBeVisible();
   }
 }

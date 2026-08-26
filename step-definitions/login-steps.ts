@@ -20,11 +20,22 @@ When(
   },
 );
 
+When("I log in with invalid credentials", async function (this: CustomWorld) {
+  await this.loginPage.login(process.env.ORANGEHRM_USERNAME!, "wrong-password");
+});
+
 Then(
   "I should see the OrangeHRM dashboard",
   async function (this: CustomWorld) {
     this.dashboardPage = new DashboardPage(this.page);
 
     await this.dashboardPage.verifyDashboardIsDisplayed();
+  },
+);
+
+Then(
+  "I should see the login error message",
+  async function (this: CustomWorld) {
+    await this.loginPage.verifyLoginErrorMessage();
   },
 );
