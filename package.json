@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "cucumber-js",
+    "test:parallel": "cucumber-js --parallel 3",
     "test:headed": "HEADLESS=false cucumber-js"
   },
   "keywords": [],
