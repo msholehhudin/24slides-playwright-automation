@@ -25,3 +25,8 @@ Scenario: User can add a new employee
   Given I am logged in to OrangeHRM
   When I add a new employee with valid information
   Then the employee should be successfully created
+
+Scenario: User sees no results when searching for a non-existing employee
+  Given I am logged in to OrangeHRM
+  When I search for employee "NonExistingEmployeeXYZ"
+  Then I should see no employee results

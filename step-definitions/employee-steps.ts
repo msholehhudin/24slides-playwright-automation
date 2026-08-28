@@ -80,3 +80,7 @@ Then(
     await this.employeePage.verifyEmployeeCreated("Automation", "Sholehhudin");
   },
 );
+
+Then("I should see no employee results", async function (this: CustomWorld) {
+  await this.employeePage.verifyNoEmployeeResults();
+});

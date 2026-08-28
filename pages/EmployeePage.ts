@@ -77,4 +77,10 @@ export class EmployeePage {
 
     await expect(this.page.getByPlaceholder("Last Name")).toHaveValue(lastName);
   }
+
+  async verifyNoEmployeeResults() {
+    await expect(
+      this.page.getByText("No Records Found", { exact: true }),
+    ).toBeVisible();
+  }
 }
